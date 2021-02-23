@@ -13,8 +13,12 @@ def get_col(col):
     '''
     Given Collection returns all info contained in mencioned Collection
 
-    Input -> Collection
+    Input -> MongoDB Collection
     Returns -> .json
+    
+        Params
+    -----------------------------------------------------------------------
+        col --> mongoDB Collection. Must be users, group or messages.
     '''
     #checking
     if not check_col(col):
@@ -26,17 +30,58 @@ def get_col(col):
     return json_util.dumps(get)
 
 def col_group(col, group):
+    '''
+    Given Collection and group (str) returns all info contained in mencioned group.
+
+    Input -> Group in a MongoDB Collection
+    Returns -> .json
+    
+        Params
+    -----------------------------------------------------------------------
+        col --> mongoDB Collection. Must be users, group or messages.
+        group --> str. Group 
+    '''
+
+    #sets the query
     q = {"group":group}
+
+    #performs the search in MongoDB
     get_group = read_data(col, q)
+
+    #checks if group exists
     if not check_real(get_group):
+
+        #if not exists, returns an error
         return {"Error": "The selected group does not exist"}
+        
+    #if exists returns a .json with our info.
     return json_util.dumps(get_group)
 
 def col_message(col, message):
+    '''
+    Given Collection and message (str) returns all info contained in mencioned message.
+
+    Input -> Message in a MongoDB Collection
+    Returns -> .json
+    
+        Params
+    -----------------------------------------------------------------------
+        col --> mongoDB Collection. Must be users, group or messages.
+        message --> str. message 
+    '''
+    #sets the query
     q = {"message":message}
+
+    #performs the search in MongoDB
     get_mes = read_data(col, q)
+
+    #checks if message exists
     if not check_real(get_mes):
+        
+        #if not exists returns error
         return {"Error": "The selected message does not exist"}
+
+    #returns .json
     return json_util.dumps(get_mes)
 
 def col_name(col, name):
