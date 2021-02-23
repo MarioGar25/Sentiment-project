@@ -31,6 +31,7 @@ The database is designed in MongoDB. And it is structured with three Collections
 ## Endpoints
 
 · "/" -> Welcome
+
 · "/< col >" -> Select all the info from a Collection.
 
 · "/< col >/showbygroup/< group >) -> Select group info from a collection. 
