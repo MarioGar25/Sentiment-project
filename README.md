@@ -15,9 +15,12 @@ But you can add any other type of user, group or message.
 
 ## Structure
 · apy.py -> connects to the API and provides you with the endpoints.
+
 · endpoints.py -> contains the functions that provide action to endpoints.
+
 · mongoCon -> connects to MongoDB, and performs read and insert functions.
-· -> contains checking functions to verify that searches are performed correctly.
+
+· checking.py -> contains checking functions to verify that searches are performed correctly.
 
 ## Database
 
