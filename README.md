@@ -29,6 +29,8 @@ The dataframe has been obtained from the following [url](https://www.kaggle.com/
 The database is designed in MongoDB. And it is structured with three Collections (users, messages, group), each one has three fields (name, group, message), only the mandatory parameters are different, therefore, it is not necessary to add all the information in each Collection, so if you don't have a field, you can add it in the Collection in which that field is not a mandatory.
 
 ## Endpoints
+### URL: http://127.0.0.1:5000/
+
 
 · "/" -> Welcome
 
