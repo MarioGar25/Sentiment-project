@@ -7,7 +7,7 @@ app = Flask("Sentimental Valuetor API")
 
 @app.route("/")
 def root():
-    return f"Welcome to the Sentimental Valuetor APi. Collections Avaibles: users, groups, messages"
+    return {"Welcome to the Sentimental Evaluator API. Collections Avaibles": "users, groups, messages"}
 
 @app.route("/<col>")
 def show_col(col):
